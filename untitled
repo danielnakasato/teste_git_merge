@@ -1,0 +1,25 @@
+    file_name_with_path = "dump/#{x['server']}.tgz"
+    key_with_path = "#{date}/#{x['server']}/#{x['server']}.tgz"
+    upload_file(file_name_with_path, 'daily', key_with_path, aws_access_key,
+        aws_secret_key, s3_bucket)
+    if is_weekly
+      upload_file(file_name_with_path, 'weekly', key_with_path, aws_access_key,
+          aws_secret_key, s3_bucket)
+    end
+    if is_monthly
+      upload_file(file_name_with_path, 'monthly', key_with_path, aws_access_key,
+          aws_secret_key, s3_bucket)
+    end
+
+    file_name_with_path = x['server'] + ".tgz"
+    key_with_path = "#{date}/#{x['server']}/#{x['server']}.tgz"
+    upload_file(file_name_with_path, 'daily', key_with_path, aws_access_key,
+        aws_secret_key, s3_bucket)
+    if is_weekly
+      upload_file(file_name_with_path, 'weekly', key_with_path, aws_access_key,
+          aws_secret_key, s3_bucket)
+    end
+    if is_monthly
+      upload_file(file_name_with_path, 'monthly', key_with_path, aws_access_key,
+          aws_secret_key, s3_bucket)
+    end
